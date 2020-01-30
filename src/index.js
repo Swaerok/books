@@ -1,3 +1,3 @@
 function trye(){
-    return 3
+    return 45
 }
