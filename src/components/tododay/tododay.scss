@@ -1,0 +1,31 @@
+.tododay {
+    background: #6B276F;
+    max-width: 300px;
+    margin: 10px;
+    padding: 10px;
+    display: inline-flex;
+    align-items: center;
+    flex-direction: column;
+    &-title {
+        color: #fff;
+        text-transform: uppercase;
+    }
+    h4 {
+        margin: 0;
+    }
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        button {
+            border: none;
+        }
+        input {
+            border: none;
+        }
+    }
+    div {
+        width: 100%;
+    }
+}
