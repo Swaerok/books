@@ -21,7 +21,7 @@ export default function App() {
 		}
 
 		const dateArr = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье']
-		res[2] = res[2].length === 2 ? `20${res[2]}` : res[2]
+		res[2] = res[2].length === 2 ? `20${res[2]}` : res[2].length === 4 ? res[2] : 'asd'
 		res[1] = res[1].length === 1 ? `0${res[1]}` : res[1]
 		res[0] = res[0].length === 1 ? `0${res[0]}` : res[0]
 
