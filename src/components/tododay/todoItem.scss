@@ -7,7 +7,8 @@
     display: flex;
     flex-wrap: wrap;
     padding: 10px;
-    p {
+    p { 
+        max-width: 290px;
         word-wrap: break-word;
         margin: 0;
     }

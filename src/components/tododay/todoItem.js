@@ -1,10 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react'
-import './todoItem.scss'
+import styles from './todoItem.scss'
 
-export default function TodoItem(props) {
+export const TodoItem = (props) => {
 	return (
-		<div className='todoItem'>
+		<div className={styles.todoItem}>
 			<p>{props.data.input}</p>
 		</div>
 	)
