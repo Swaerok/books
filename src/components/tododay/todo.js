@@ -3,15 +3,16 @@ import React, { useState } from 'react'
 import { ToDoDay } from './tododay'
 import styles from './todo.scss'
 
+const uuidv4 = require('uuid/v4');
+
 export const Todo = () => {
 	const [todoDays, useTodoDays] = useState([]);
 	const [todoInput, useTodoInput] = useState('')
-	const [idForKeys, useIdForKeys] = useState(0)
 	const [error, useError] = useState('')
 
 	const setDay = (e) => {
 		e.preventDefault();
-
+		console.log(uuidv4())
 		const res = todoInput.split('.');
 		const days = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье']
 		if (res.length !== 3 || !todoInput) {
@@ -32,12 +33,10 @@ export const Todo = () => {
 		}
 		result.push({
 			input: days[date.getDay() - 1],
-			id: idForKeys,
 			date: `${res[0]}.${res[1]}.${res[2]} `,
 		})
 		useTodoInput('')
 		useTodoDays(result)
-		useIdForKeys(idForKeys + 1)
 	}
 	const setInputDay = (e) => {
 		const { value } = e.currentTarget;
@@ -46,15 +45,13 @@ export const Todo = () => {
 	}
 	return (
 		<div className={styles.wrapper}>
-			<div className={styles.todo}>
-				<h1>ToDooshka</h1>
+			<div className={styles.todo}><h1>ToDooshka</h1>
 				<h4>{error || ''}</h4>
-				<form onSubmit={setDay}>
-					<input placeholder="дд.мм.гг" onChange={setInputDay} value={todoInput} />
+				<form onSubmit={setDay}><input placeholder="дд.мм.гг" onChange={setInputDay} value={todoInput} />
 					<button type="submit">Add</button>
 				</form>
 				<div className={styles.todo__days}>
-					{todoDays.map((item) => { return <ToDoDay data={item} key={item.id}/> }) }
+					{todoDays.map((item) => { return <ToDoDay data={item} key={uuidv4()} /> })}
 				</div>
 			</div>
 		</div>

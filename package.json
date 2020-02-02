@@ -50,7 +50,8 @@
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
-    "thunk": "0.0.1"
+    "thunk": "0.0.1",
+    "uuid": "^3.4.0"
   },
   "browserslist": [
     "last 4 version",
